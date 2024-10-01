@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { IoHomeOutline } from 'react-icons/io5';
 import { TbMessageCircle } from 'react-icons/tb';
 import { RiLoginBoxLine } from 'react-icons/ri';
+
 export default function Header() {
     return (
         <header className='fixed top-0 left-0 w-full h-16 flex items-center z-40'>

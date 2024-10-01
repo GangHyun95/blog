@@ -12,7 +12,11 @@ body {
 }
 
 main {
-    @apply grow pt-16;
+    @apply grow pt-16 flex flex-col justify-center;
+}
+
+input {
+    @apply w-full outline-none;
 }
 
 .hover-class:hover {
