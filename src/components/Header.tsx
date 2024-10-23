@@ -9,10 +9,10 @@ import { TbMessageCircle } from 'react-icons/tb';
 export default function Header() {
     const linkClass = 'flex items-center gap-1 hover-class';
     return (
-        <header className='flex justify-between items-center p-4'>
+        <header className='flex justify-between items-center p-4 text-blue-200'>
             <Link href='/'>
                 <h1 className='text-3xl font-semibold'>
-                    <span className='text-blue-500'>Hy</span>un
+                    <span>Hy</span>un
                 </h1>
             </Link>
             <nav className='flex gap-3'>

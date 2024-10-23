@@ -1,8 +1,15 @@
 import type { Metadata } from 'next';
+import { Noto_Sans } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+
+const notoSans = Noto_Sans({
+    weight: ['400', '700'],
+    subsets: ['latin'],
+    display: 'swap',
+});
 
 const pretendard = localFont({
     src: './fonts/PretendardVariable.woff2',
@@ -22,8 +29,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang='en' className={`${pretendard.variable}`}>
-            <body className={pretendard.className}>
+        <html lang='en'>
+            <body className={`${notoSans.className} ${pretendard.variable} bg-background text-foreground`}>
                 <Header />
                 <main>{children}</main>
                 <Footer />
