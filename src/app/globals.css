@@ -30,6 +30,13 @@ main {
     background-position: right;
 }
 
+/* .post-item:nth-child(-n+2) {
+    width: calc(50% - 15px);
+}
+.post-item:nth-child(n+3) {
+    width: calc(33.33% - 20px);
+} */
+
 @layer utilities {
     .gradient-text {
         display: inline-block;

@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function Hero() {
     return (
-        <section className='text-center'>
+        <section className='text-center pt-32'>
             <Image
                 className='mx-auto rounded-full'
                 src={profileImage}
@@ -13,8 +13,8 @@ export default function Hero() {
                 height={250}
                 priority
             />
-            <h2 className='text-xl font-semibold mt-2'>I'm <span className='gradient-text'>GangHyun</span></h2>
-            <h3 className='text-xl font-semibold mt-1'>Front-End Developer</h3>
+            <h2 className='text-2xl font-semibold mt-2'>Hello, I&apos;m <span className='gradient-text'>GangHyun</span></h2>
+            <h3 className='text-2xl font-semibold mt-1'>Front-End Developer</h3>
             <Link href='/contact'>
                 <button className='gradient-btn text-white text-sm font-medium rounded-md py-2 px-4 mt-2'>
                     <span>Contact Me</span>

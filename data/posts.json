@@ -1,0 +1,42 @@
+[
+    {
+        "title": "React에서 텍스트 타이핑 효과 구현하기!",
+        "description": "React와 JavaScript를 사용해 텍스트 타이핑 애니메이션을 구현하는 방법을 정리했습니다!",
+        "date": "2024-09-19",
+        "category": "frontend",
+        "path": "text-typing",
+        "featured": true
+    },
+    {
+        "title": "자바스크립트 Date 객체 정리!",
+        "description": "자바스크립트의 Date 객체와 관련 함수들을 쉽게 정리했습니다!",
+        "date": "2024-09-13",
+        "category": "javascript",
+        "path": "date-object",
+        "featured": true
+    },
+    {
+        "title": "React Query를 통한 데이터 관리!",
+        "description": "React Query를 사용하여 데이터 페칭, 캐싱, 동기화 및 업데이트를 효율적으로 관리하는 방법을 정리했습니다!",
+        "date": "2024-08-22",
+        "category": "react",
+        "path": "query-guide",
+        "featured": true
+    },
+    {
+        "title": "Next.js란? 그리고 CSR, SSR, SSG, ISR 이해하기!",
+        "description": "Next.js의 핵심 개념인 CSR, SSR, SSG, ISR의 차이점과 활용법을 정리했습니다!",
+        "date": "2024-09-23",
+        "category": "next.js",
+        "path": "nextjs-guide",
+        "featured": true
+    },
+    {
+        "title": "temp",
+        "description": "temp",
+        "date": "2024-01-01",
+        "category": "temp",
+        "path": "temp",
+        "featured": true
+    }
+]
