@@ -2,26 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,body {
+  height: 100vh;
+  overflow-y: auto;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  @apply flex flex-col w-full max-w-screen-2xl mx-auto;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+main {
+  @apply grow;
+}
+
+.hover-class:hover {
+  @apply text-blue-500 duration-150;
 }
