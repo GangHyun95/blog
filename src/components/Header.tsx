@@ -12,10 +12,10 @@ export default function Header() {
         <header className='flex justify-between items-center p-4'>
             <Link href='/'>
                 <h1 className='text-3xl font-semibold'>
-                    <span className='text-blue-600'>Hy</span>un
+                    <span className='text-blue-500'>Hy</span>un
                 </h1>
             </Link>
-            <nav className='flex gap-4'>
+            <nav className='flex gap-3'>
                 <Link href='/' className={linkClass}>
                     <IoHomeOutline className='text-xl' />
                     <span>Home</span>
