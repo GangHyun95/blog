@@ -23,7 +23,7 @@ export default function PostCard({
                         <span>#{category}</span>
                         <time className=''>{date.toString()}</time>
                     </div>
-                    <h3 className='text-2xl font-bold text-blue-200 mb-5 group-hover:text-blue-400 transition-color duration-300'>
+                    <h3 className='text-2xl font-bold text-blue-200 mb-5 group-hover:text-blue-400 transition-color duration-300 w-full truncate'>
                         {title}
                     </h3>
                     <p className='w-full truncate'>{description}</p>
