@@ -1,12 +1,13 @@
 import { getFeaturedPosts } from '@/service/posts';
 import PostsGrid from './PostsGrid';
 import Link from 'next/link';
+import Container from './layout/Container';
 
 export default  async function FeaturedPosts() {
     const posts = await getFeaturedPosts();
     return (
         <section className='py-16'>
-            <div className='px-4 max-w-7xl mx-auto'>
+            <Container>
                 <h2 className='gradient-text text-5xl font-bold mb-12'>Editor&apos;s picked</h2>
                 <PostsGrid posts={posts}/>
                 <div className='text-center'>
@@ -16,7 +17,7 @@ export default  async function FeaturedPosts() {
                         </button>
                     </Link>
                 </div>
-            </div>
+            </Container>
         </section>
     );
 }

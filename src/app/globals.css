@@ -23,7 +23,7 @@ main {
 }
 
 .hover-class:hover {
-    @apply text-blue-400 duration-150;
+    @apply text-sky-500 duration-150;
 }
 
 .btn:is(:hover, :focus-visible) {
@@ -56,4 +56,11 @@ main {
     .gradient-btn:hover {
         background-position: right;
     }
+
+    .gradient-border-bottom {
+        border-bottom: 2px solid transparent;
+        border-image: linear-gradient(90deg, #0ea5ea, #0bd1d1 51%) 1;
+    }
+    
+    
 }
