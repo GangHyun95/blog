@@ -3,7 +3,7 @@
         "title": "React에서 텍스트 타이핑 효과 구현하기!",
         "description": "React와 JavaScript를 사용해 텍스트 타이핑 애니메이션을 구현하는 방법을 정리했습니다!",
         "date": "2024-09-19",
-        "category": "frontend",
+        "category": "react",
         "path": "text-typing",
         "featured": true
     },
@@ -32,11 +32,11 @@
         "featured": true
     },
     {
-        "title": "temp",
-        "description": "temp",
-        "date": "2024-01-01",
-        "category": "temp",
-        "path": "temp",
+        "title": "Next.js 구글 폰트와 로컬 폰트 적용법",
+        "description": "Next.js에서의 폰트 적용법",
+        "date": "2024-10-24",
+        "category": "next.js",
+        "path": "font-setup",
         "featured": true
     }
 ]
