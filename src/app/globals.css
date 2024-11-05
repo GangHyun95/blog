@@ -5,6 +5,7 @@
 :root {
     --background: #0f1729;
     --foreground: #7d91b0;
+    --surface: #131b30;
 }
 
 html,
@@ -36,7 +37,20 @@ main {
 .post-item:nth-child(n+3) {
     width: calc(33.33% - 20px);
 } */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+    @apply text-blue-300;
+}
 
+.prose strong,
+.prose p code,
+.prose li code {
+    @apply text-blue-400;
+}
 @layer utilities {
     .gradient-text {
         display: inline-block;
@@ -61,6 +75,4 @@ main {
         border-bottom: 2px solid transparent;
         border-image: linear-gradient(90deg, #0ea5ea, #0bd1d1 51%) 1;
     }
-    
-    
 }

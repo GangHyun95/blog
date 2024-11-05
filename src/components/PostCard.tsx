@@ -9,7 +9,7 @@ export default function PostCard({
 }) {
     return (
         <Link href={`/posts/${path}`}>
-            <article className='rounded-2xl overflow-hidden shadow-lg border border-slate-700 p-5 transform transition-transform duration-300 hover:translate-y-[-5px] group'>
+            <article className='rounded-2xl overflow-hidden shadow-lg border border-slate-700 p-5 transform transition-transform duration-300 hover:translate-y-[-5px] group bg-surface'>
                 <div className='w-full aspect-[16/9] relative'>
                     <Image
                         className='rounded-2xl object-cover'

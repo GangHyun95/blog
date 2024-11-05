@@ -32,7 +32,7 @@ export default function RootLayout({
         <html lang='en'>
             <body className={`${notoSans.className} ${pretendard.variable} bg-background text-foreground`}>
                 <Header />
-                <main className='pt-32'>{children}</main>
+                <main>{children}</main>
                 <Footer />
             </body>
         </html>
