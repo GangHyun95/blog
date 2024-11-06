@@ -1,7 +1,7 @@
-import MarkdownViewer from '@/components/MarkdownViewer';
+import AdjacentPostCard from '@/components/AdjacentPostCard';
+import PostContent from '@/components/PostContent';
 import { getPostData } from '@/service/posts';
 import Image from 'next/image';
-import { AiTwotoneCalendar } from 'react-icons/ai';
 
 type Props = {
     params: {
@@ -20,15 +20,10 @@ export default async function PostPage({ params: { slug } }: Props) {
                 width={760}
                 height={420}
             />
-            <section className='flex flex-col p-4'>
-                <div className='flex items-center self-end text-blue-300 mb-4'>
-                    <AiTwotoneCalendar />
-                    <p className='font-semibold ml-1'>{post.date.toString()}</p>
-                </div>
-                <h1 className='text-4xl font-bold text-blue-300 mb-4'>{post.title}</h1>
-                <p className='text-xl font-bold text-blue-100'>{post.description}</p>
-                <div className='w-44 border-2 border-sky-600 mt-4 mb-8'></div>
-                <MarkdownViewer content={post.content} />
+            <PostContent post={post} />
+            <section className='flex shadow-md'>
+                {post.prev && <AdjacentPostCard post={post.prev} type='prev'/>}
+                {post.next && <AdjacentPostCard post={post.next} type='next'/>}
             </section>
         </article>
     );
