@@ -2,18 +2,21 @@
 
 import { ChangeEvent, FormEvent, useState } from 'react';
 import Banner, { BannerData } from './Banner';
+import { sendContactEmail } from '@/service/contact';
 
 type Form = {
     from: string;
     subject: string;
     message: string;
 };
+
+const DEFAULT_DATA = {
+    from: '',
+    subject: '',
+    message: '',
+};
 export default function ContactForm() {
-    const [form, setForm] = useState<Form>({
-        from: '',
-        subject: '',
-        message: '',
-    });
+    const [form, setForm] = useState<Form>(DEFAULT_DATA);
     const [banner, setBanner] = useState<BannerData | null>(null);
     const onChange = (
         e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -23,11 +26,25 @@ export default function ContactForm() {
     };
     const onSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(form);
-        setBanner({ message: 'TEST', state: 'error' });
-        // setTimeout(() => {
-        //     setBanner(null);
-        // }, 3000);
+        sendContactEmail(form) //
+            .then(() => {
+                setBanner({
+                    message: '메일을 성공적으로 보냈습니다.',
+                    state: 'success',
+                });
+                setForm(DEFAULT_DATA);
+            })
+            .catch(() => {
+                setBanner({
+                    message: '메일 전송에 실패했습니다. 다시 시도해 주세요.',
+                    state: 'error',
+                });
+            })
+            .finally(() => {
+                setTimeout(() => {
+                    setBanner(null);
+                }, 3000);
+            });
     };
     return (
         <section className='w-full max-w-md'>
@@ -41,6 +58,7 @@ export default function ContactForm() {
                 </label>
                 <input
                     type='email'
+                    className='text-black'
                     id='from'
                     name='from'
                     required
@@ -48,9 +66,11 @@ export default function ContactForm() {
                     value={form.from}
                     onChange={onChange}
                 />
-                <label htmlFor='subject'>Subject</label>
+                <label className='font-semibold' htmlFor='subject'>
+                    Subject
+                </label>
                 <input
-                    className='font-semibold'
+                    className='text-black'
                     type='text'
                     id='subject'
                     name='subject'
@@ -58,9 +78,11 @@ export default function ContactForm() {
                     value={form.subject}
                     onChange={onChange}
                 />
-                <label htmlFor='message'>Message</label>
+                <label className='font-semibold' htmlFor='message'>
+                    Message
+                </label>
                 <textarea
-                    className='font-semibold'
+                    className='text-black'
                     rows={10}
                     id='message'
                     name='message'
@@ -68,7 +90,9 @@ export default function ContactForm() {
                     value={form.message}
                     onChange={onChange}
                 />
-                <button className='bg-slate-300 text-black font-bold hover:bg-slate-400'>Submit</button>
+                <button className='bg-slate-300 text-black font-bold hover:bg-slate-400'>
+                    Submit
+                </button>
             </form>
         </section>
     );
