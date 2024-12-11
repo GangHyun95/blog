@@ -3,7 +3,7 @@ import Hero from '@/components/Hero';
 const TITLE_CLASS = 'gradient-text text-2xl font-bold my-2';
 export default function AboutPage() {
     return (
-        <>
+        <div className='inner'>
             <Hero />
             <section className='p-8 text-center'>
                 <h2 className={TITLE_CLASS}>Who Am I?</h2>
@@ -39,6 +39,6 @@ export default function AboutPage() {
                     VS Code
                 </p>
             </section>
-        </>
+        </div>
     );
 }

@@ -8,7 +8,7 @@ const LINKS = [
 ];
 export default function ContactPage() {
     return (
-        <section className='pt-32 flex flex-col items-center'>
+        <section className='pt-32 flex flex-col items-center inner'>
             <h2 className='text-3xl font-bold my-2'>Contact Me</h2>
             <p>hgh6128@gmail.com</p>
             <div className='flex gap-4 my-2'>
