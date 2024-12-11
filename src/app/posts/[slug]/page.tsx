@@ -12,7 +12,7 @@ export default async function PostPage({ params: { slug } }: Props) {
     const post = await getPostData(slug);
 
     return (
-        <article className='rounded-2xl overflow-hidden bg-surface mt-24 shadow-lg m-4'>
+        <article className='rounded-2xl overflow-hidden bg-surface mt-24 shadow-lg m-4 inner'>
             <Image
                 className='w-full h-1/5 max-h-[500px]'
                 src={`/images/posts/${post.path}.png`}
