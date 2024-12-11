@@ -7,7 +7,7 @@ type Props = {
 };
 export default function PostsGrid({ posts, option = 'default' }: Props) {
     return (
-        <div className='flex grow flex-wrap gap-[30px]'>
+        <div className='flex grow flex-wrap gap-[30px] max-w-full'>
             {posts.map((post, index) => (
                 <div
                     key={post.path}

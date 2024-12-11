@@ -18,9 +18,13 @@ export default function FilterablePosts({ posts, categories }: Props) {
 
     console.log(categories);
     return (
-        <section className='pb-16 flex'>
-            <PostsGrid posts={filtered} option="simple" />
-            <Categories categories={['all', ...categories]} selected={selected} onClick={setSelected} />
+        <section className="pb-16 flex flex-col md:flex-row">
+            <div className="order-2 md:order-1 md:flex-1">
+                <PostsGrid posts={filtered} option="simple" />
+            </div>
+            <div className="order-1 md:order-2">
+                <Categories categories={['all', ...categories]} selected={selected} onClick={setSelected} />
+            </div>
         </section>
     );
 }
