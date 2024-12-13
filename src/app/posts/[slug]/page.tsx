@@ -1,6 +1,7 @@
 import AdjacentPostCard from '@/components/AdjacentPostCard';
 import PostContent from '@/components/PostContent';
-import { getPostData } from '@/service/posts';
+import { getFeaturedPosts, getPostData } from '@/service/posts';
+import { Metadata } from 'next';
 import Image from 'next/image';
 
 type Props = {
@@ -8,6 +9,16 @@ type Props = {
         slug: string;
     };
 };
+
+export async function generateMetadata({
+    params: { slug },
+}: Props): Promise<Metadata> {
+    const { title, description } = await getPostData(slug);
+    return {
+        title,
+        description,
+    };
+}
 export default async function PostPage({ params: { slug } }: Props) {
     const post = await getPostData(slug);
 
@@ -22,9 +33,16 @@ export default async function PostPage({ params: { slug } }: Props) {
             />
             <PostContent post={post} />
             <section className='flex shadow-md'>
-                {post.prev && <AdjacentPostCard post={post.prev} type='prev'/>}
-                {post.next && <AdjacentPostCard post={post.next} type='next'/>}
+                {post.prev && <AdjacentPostCard post={post.prev} type='prev' />}
+                {post.next && <AdjacentPostCard post={post.next} type='next' />}
             </section>
         </article>
     );
+}
+
+export async function generateStaticParams() {
+    const posts = await getFeaturedPosts();
+    return posts.map((post) => ({
+        slug: post.path,
+    }));
 }

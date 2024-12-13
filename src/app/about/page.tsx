@@ -1,6 +1,12 @@
 import Hero from '@/components/Hero';
+import { Metadata } from 'next';
 
+export const metadata: Metadata = {
+    title: "About me",
+    description: "About me",
+}
 const TITLE_CLASS = 'gradient-text text-2xl font-bold my-2';
+
 export default function AboutPage() {
     return (
         <div className='inner'>
